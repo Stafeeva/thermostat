@@ -2,6 +2,7 @@ var Thermostat = function() {
   this.defaultTemperature = 20;
   this.minimumTemperature = 10;
   this.currentTemperature = 20;
+  this.maximumTemperature = 32;
 };
 
 Thermostat.prototype.increaseTemperature = function (number) {

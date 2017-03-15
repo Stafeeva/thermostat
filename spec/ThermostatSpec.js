@@ -40,6 +40,10 @@ describe ("Thermostat", function() {
       expect(thermostat.currentTemperature).toEqual(23);
     });
 
+    it ("throws an error when temperature is above maximum", function() {
+      expect(function() {thermostat.increaseTemperature(15)}).toThrowError("Unable to decrease temperature: temperature is above maximum.")
+    })
+
     it ("decreases temperature", function() {
       thermostat.decreaseTemperature(3);
       expect(thermostat.currentTemperature).toEqual(17)
