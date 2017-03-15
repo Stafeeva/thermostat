@@ -1,19 +1,30 @@
 var Thermostat = function() {
   this.defaultTemperature = 20;
-  this.minimumTemperature = 10;
   this.currentTemperature = 20;
-  this.maximumTemperature = 32;
+  this.minimumTemperature = 10;
+  this.maximumTemperature = 25;
+  this.isPowerSavingMode = true;
 };
 
-Thermostat.prototype.increaseTemperature = function (number) {
+Thermostat.prototype.increaseTemperature = function(number) {
+  if (this.currentTemperature + number >= 32) {
+    throw new Error("Unable to increase temperature: temperature is above maximum.")
+  }
+  else {
   this.currentTemperature = this.currentTemperature + number
+  };
 };
 
-Thermostat.prototype.decreaseTemperature = function (number) {
+Thermostat.prototype.decreaseTemperature = function(number) {
   if (this.currentTemperature - number <= 10) {
     throw new Error("Unable to decrease temperature: temperature is below minimum.")
   }
   else {
     this.currentTemperature = this.currentTemperature - number
   };
+};
+
+Thermostat.prototype.powerSavingModeOff = function() {
+  this.isPowerSavingMode = false;
+  this.maximumTemperature = 32;
 };

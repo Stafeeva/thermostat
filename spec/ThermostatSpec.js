@@ -23,8 +23,12 @@ describe ("Thermostat", function() {
       expect(thermostat.minimumTemperature).toEqual(10)
     });
 
-    it ("has a maximum temperature of 32 degreess", function() {
-      expect(thermostat.maximumTemperature).toEqual(32)
+    it ("has a maximum temperature of 25 degreess", function() {
+      expect(thermostat.maximumTemperature).toEqual(25)
+    });
+
+    it ("has power saving mode set on", function() {
+      expect(thermostat.isPowerSavingMode).toEqual(true)
     });
 
   });
@@ -41,7 +45,7 @@ describe ("Thermostat", function() {
     });
 
     it ("throws an error when temperature is above maximum", function() {
-      expect(function() {thermostat.increaseTemperature(15)}).toThrowError("Unable to decrease temperature: temperature is above maximum.")
+      expect(function() {thermostat.increaseTemperature(15)}).toThrowError("Unable to increase temperature: temperature is above maximum.")
     })
 
     it ("decreases temperature", function() {
@@ -51,6 +55,15 @@ describe ("Thermostat", function() {
 
     it ("throws an error when temperature is below minimum", function() {
       expect(function() {thermostat.decreaseTemperature(11)}).toThrowError("Unable to decrease temperature: temperature is below minimum.")
+    });
+
+  });
+
+  describe ("power saving mode", function() {
+
+    it ("when off, changes maximum temperature to 32", function() {
+      thermostat.powerSavingModeOff();
+      expect(thermostat.maximumTemperature).toEqual(32)
     });
 
   });
