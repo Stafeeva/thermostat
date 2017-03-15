@@ -66,6 +66,11 @@ describe ("Thermostat", function() {
       expect(thermostat.maximumTemperature).toEqual(32)
     });
 
+    it ("when on, changes maximum temperature to 25", function() {
+      thermostat.powerSavingModeOn();
+      expect(thermostat.maximumTemperature).toEqual(25)
+    });
+
   });
 
 });
