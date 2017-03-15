@@ -1,5 +1,4 @@
-// Thermostat starts at 20 degrees
-// The minimum temperature is 10 degrees
+'use strict';
 
 describe ("Thermostat", function() {
 
@@ -97,7 +96,7 @@ describe ("Thermostat", function() {
       thermostat.increaseTemperature(5)
       expect(thermostat.currentEnergyUsage()).toEqual("high-usage")
     });
-  });
 
+  });
 
 });

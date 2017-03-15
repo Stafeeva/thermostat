@@ -1,0 +1,14 @@
+body {
+  background: pink;
+}
+
+.button {
+  margin: 10px;
+  padding-top: 10px;
+  font-size: 17px;
+  text-align: center;
+  color: white;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(27, 38, 87, 1.0);
+}

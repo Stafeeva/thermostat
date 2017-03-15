@@ -1,3 +1,5 @@
+'use strict';
+
 var Thermostat = function() {
   this.defaultTemperature = 20;
   this.currentTemperature = 20;
@@ -40,7 +42,7 @@ Thermostat.prototype.resetToDefault = function() {
 };
 
 Thermostat.prototype.currentEnergyUsage = function () {
-  if (this.currentTemperature < 18) return "low-usage"
-  else if (this.currentTemperature >= 25) return "high-usage"
-  else return "medium-usage"
+  if (this.currentTemperature < 18) return "low-usage";
+  else if (this.currentTemperature >= 25) return "high-usage";
+  else return "medium-usage";
 };
