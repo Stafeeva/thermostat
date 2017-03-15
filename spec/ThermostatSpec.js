@@ -31,12 +31,16 @@ describe ("Thermostat", function() {
       expect(thermostat.currentTemperature).toEqual(20)
     });
 
-    it ("increase temperature", function() {
+    it ("increases temperature", function() {
       thermostat.increaseTemperature(3);
       expect(thermostat.currentTemperature).toEqual(23);
     });
 
-  });
+    it ("decreases temperature", function() {
+      thermostat.decreaseTemperature(3);
+      expect(thermostat.currentTemperature).toEqual(17)
+    });
 
+  });
 
 });
