@@ -9,5 +9,10 @@ Thermostat.prototype.increaseTemperature = function (number) {
 };
 
 Thermostat.prototype.decreaseTemperature = function (number) {
-  this.currentTemperature = this.currentTemperature - number
+  if (this.currentTemperature - number <= 10) {
+    throw new Error("Unable to decrease temperature: temperature is below minimum.")
+  }
+  else {
+    this.currentTemperature = this.currentTemperature - number
+  };
 };

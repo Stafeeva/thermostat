@@ -42,8 +42,7 @@ describe ("Thermostat", function() {
     });
 
     it ("throws an error when temperature is below minimum", function() {
-      thermostat.decreaseTemperature(11);
-      expect(thermostat.decreaseTemperature).toThrowError("Unable to decrease temperature: temperature is below minimum.")
+      expect(function() {thermostat.decreaseTemperature(11)}).toThrowError("Unable to decrease temperature: temperature is below minimum.")
     });
 
   });
