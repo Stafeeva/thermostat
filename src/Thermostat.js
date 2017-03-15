@@ -28,3 +28,8 @@ Thermostat.prototype.powerSavingModeOff = function() {
   this.isPowerSavingMode = false;
   this.maximumTemperature = 32;
 };
+
+Thermostat.prototype.powerSavingModeOn = function () {
+  this.isPowerSavingMode = true;
+  this.maximumTemperature = 25;
+};
