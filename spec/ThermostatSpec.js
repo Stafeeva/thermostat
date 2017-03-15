@@ -84,19 +84,20 @@ describe ("Thermostat", function() {
 
   describe ("#currentEnergyUsage", function() {
 
-    it ("returns low-usage when current temperature is < 18" function() {
+    it ("returns low-usage when current temperature is < 18", function() {
       thermostat.decreaseTemperature(3)
-      expect(thermostat.currentEnergyUsage).toEqual("low-usage")
+      expect(thermostat.currentEnergyUsage()).toEqual("low-usage")
     });
 
-    it ("returns medium-usage when current temperature is < 25" function() {
-      expect(thermostat.currentEnergyUsage).toEqual("medium-usage")
+    it ("returns medium-usage when current temperature is < 25", function() {
+      expect(thermostat.currentEnergyUsage()).toEqual("medium-usage")
     });
 
-    it ("returns high-usage when current temperature is >= 25" function() {
+    it ("returns high-usage when current temperature is >= 25", function() {
       thermostat.increaseTemperature(5)
-      expect(thermostat.currentEnergyUsage).toEqual("high-usage")
+      expect(thermostat.currentEnergyUsage()).toEqual("high-usage")
     });
   });
+
 
 });
