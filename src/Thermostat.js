@@ -1,1 +1,3 @@
-var Thermostat = function(){};
+var Thermostat = function() {
+  this.defaultTemperature = 20;
+};
