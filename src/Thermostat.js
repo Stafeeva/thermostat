@@ -5,5 +5,9 @@ var Thermostat = function() {
 };
 
 Thermostat.prototype.increaseTemperature = function (number) {
-    this.currentTemperature = this.currentTemperature + number
+  this.currentTemperature = this.currentTemperature + number
+};
+
+Thermostat.prototype.decreaseTemperature = function (number) {
+  this.currentTemperature = this.currentTemperature - number
 };
