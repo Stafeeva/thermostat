@@ -1,5 +1,5 @@
 // Thermostat starts at 20 degrees
-// Thermostat starts at 20 degrees
+// The minimum temperature is 10 degrees
 
 describe ("Thermostat", function() {
 
@@ -11,7 +11,6 @@ describe ("Thermostat", function() {
 
   describe ("exists", function() {
 
-    console.log(thermostat);
     it ("defined", function() {
       expect(thermostat).toBeDefined();
     });
@@ -25,5 +24,18 @@ describe ("Thermostat", function() {
     });
 
   });
+
+  describe ("change in temperature", function(){
+
+    it ("shows current temperature", function(){
+      expect(thermostat.currentTemperature).toEqual(20)
+    });
+
+    // it ("increase temperature", function(){
+    //
+    // });
+
+  });
+
 
 });
