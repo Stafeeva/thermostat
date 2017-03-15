@@ -9,9 +9,9 @@ describe ("Thermostat", function() {
     thermostat = new Thermostat;
   })
 
-  describe ("exists", function() {
+  describe ("Upon instantiating", function() {
 
-    it ("defined", function() {
+    it ("is defined", function() {
       expect(thermostat).toBeDefined();
     });
 
@@ -19,8 +19,12 @@ describe ("Thermostat", function() {
       expect(thermostat.defaultTemperature).toEqual(20)
     });
 
-    it ("has a minimum temperature of 10 degrees", function () {
+    it ("has a minimum temperature of 10 degrees", function() {
       expect(thermostat.minimumTemperature).toEqual(10)
+    });
+
+    it ("has a maximum temperature of 32 degreess", function() {
+      expect(thermostat.maximumTemperature).toEqual(32)
     });
 
   });
